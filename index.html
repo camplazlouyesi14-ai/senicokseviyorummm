@@ -33,7 +33,7 @@ body {
     to { transform: translateX(-50%); }
 }
 
-/* HEADER VE APPPA */
+/* HEADER VE APPA */
 header {
     padding: 40px 15px;
 }
@@ -62,9 +62,7 @@ header {
 /* BAŞLIK VE ALT YAZI KONTEYNERI */
 .title-container {
     display: inline-block;
-    padding: 10px 20px;
-    background: rgba(0,0,0,0.25); /* yarı saydam arka plan azaldı */
-    border-radius: 12px;
+    padding: 0; /* arka plan kaldırıldı */
     margin-bottom: 20px;
 }
 
@@ -84,12 +82,12 @@ header {
 }
 
 .element {
-    background: rgba(0,0,0,0.25); /* opaklık azaltıldı */
+    background: none; /* arka plan kaldırıldı */
     padding: 14px 20px;
     border-radius: 12px;
     font-size: 1.15rem;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s;
     position: relative;
     z-index: 10;
     color: white;
@@ -98,7 +96,6 @@ header {
 
 .element:hover {
     transform: scale(1.1);
-    background: rgba(0,0,0,0.45);
     box-shadow: 0 0 15px rgba(255,255,255,0.5);
 }
 
@@ -107,7 +104,7 @@ header {
     max-width: 90%;
     margin: 0 auto;
     padding: 15px;
-    background: rgba(0,0,0,0.25); /* opaklık azaltıldı */
+    background: none; /* arka plan kaldırıldı */
     border-radius: 15px;
     font-size: 1rem;
     color: white;
@@ -141,7 +138,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.9); /* panel arka planı kalıyor */
     padding: 20px;
     border-radius: 15px;
     display: none;
@@ -203,7 +200,7 @@ footer {
     </p>
 </section>
 
-<footer>Avatarın Yunus ✨</footer>
+<footer>Avatarın Yunus © ✨</footer>
 
 <!-- FOTO PANELLER -->
 <div class="photoPanel" id="photoWater">
