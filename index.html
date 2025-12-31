@@ -1,237 +1,227 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İyi Ki Doğdun Azra 🌙</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İyi Ki Doğdun Azra 🌙</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to bottom, #0b1d3a, #1c3b5a);
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0b1d3a, #1c3b5a);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-        /* ARKA PLAN KAYAN BULUT/DAĞ EFECTİ */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 100%;
-            background: url('images/clouds.png') repeat-x;
-            background-size: cover;
-            animation: moveBg 60s linear infinite;
-            z-index: -1;
-        }
+/* ARKA PLAN KAYAN BULUT/DAĞ EFECTİ */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('images/clouds.png') repeat-x;
+    background-size: cover;
+    animation: moveBg 60s linear infinite;
+    z-index: -1;
+}
 
-        @keyframes moveBg {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
+@keyframes moveBg {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
 
-        header {
-            padding: 30px 15px;
-        }
+header {
+    padding: 30px 15px;
+}
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
+h1 { font-size: 2.2rem; margin-bottom: 10px; }
+h2 { font-weight: 300; opacity: 0.9; margin-bottom: 20px; }
 
-        h2 {
-            font-weight: 300;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
+/* APPA FOTOĞRAFI */
+.appa-container { position: relative; height: 250px; margin: 20px 0; }
+.appa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    border-radius: 15px;
+    animation: float 3s ease-in-out infinite alternate;
+}
 
-        /* APPA FOTOĞRAFI - ORTADA YÜZEN */
-        .appa-container {
-            position: relative;
-            height: 250px;
-            margin: 20px 0;
-        }
+@keyframes float {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -60%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
 
-        .appa {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 250px;
-            border-radius: 15px;
-            animation: float 3s ease-in-out infinite alternate;
-        }
+.elements { display: flex; justify-content: center; gap: 15px; margin: 25px 0; flex-wrap: wrap; }
 
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -60%) scale(1.05); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
+.element {
+    background: rgba(255,255,255,0.1);
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s;
+    position: relative;
+    z-index: 10;
+}
 
-        .elements {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
-            flex-wrap: wrap;
-        }
+.element:hover { transform: scale(1.1); background: rgba(255,255,255,0.25); }
 
-        .element {
-            background: rgba(255,255,255,0.1);
-            padding: 12px 18px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s;
-        }
+.message {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    font-size: 1rem;
+}
 
-        .element:hover {
-            transform: scale(1.1);
-            background: rgba(255,255,255,0.25);
-        }
+.message p { line-height: 1.5; }
 
-        .message {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 15px;
-            font-size: 1rem;
-        }
+footer { margin-top: 30px; padding: 15px; font-size: 0.85rem; opacity: 0.7; }
 
-        .message p {
-            line-height: 1.5;
-        }
+@media (max-width: 600px) {
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1rem; }
+    .appa { width: 180px; }
+    .elements { gap: 10px; }
+    .element { padding: 10px 15px; font-size: 0.95rem; }
+    .message { padding: 12px; font-size: 0.95rem; }
+    footer { font-size: 0.8rem; }
+}
 
-        footer {
-            margin-top: 30px;
-            padding: 15px;
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
+/* FOTO PANELLER */
+.photoPanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+    z-index: 1000;
+    max-width: 90%;
+    max-height: 80%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            h2 { font-size: 1rem; }
-            .appa { width: 180px; }
-            .elements { gap: 10px; }
-            .element { padding: 10px 15px; font-size: 0.95rem; }
-            .message { padding: 12px; font-size: 0.95rem; }
-            footer { font-size: 0.8rem; }
-        }
+.photoPanel.fade-in { opacity: 1; }
 
-        /* FOTO PANEL (Su ve Ateş için) */
-        .photoPanel {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.9);
-            padding: 20px;
-            border-radius: 15px;
-            display: none;
-            z-index: 1000;
-            max-width: 90%;
-            max-height: 80%;
-            box-shadow: 0 0 20px rgba(0,0,0,0.7);
-            text-align: center;
-        }
+.photoPanel img { width: 100%; border-radius: 15px; }
 
-        .photoPanel img {
-            width: 100%;
-            border-radius: 15px;
-        }
-
-        .closePhoto {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+.closePhoto {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+</style>
 </head>
 
 <body>
+<div class="background"></div>
 
-    <div class="background"></div>
-
-    <header>
-        <h1>İyi Ki Doğdun Azra 🌊🔥🌪️🌱</h1>
-        <h2>Dört element, tek denge… ve bugün senin günün</h2>
-
-        <div class="appa-container">
-            <img src="images/pngegg.png" alt="Appa" class="appa">
-        </div>
-    </header>
-
-    <section class="elements">
-        <div class="element" id="water">🌊 Su</div>
-        <div class="element" id="fire">🔥 Ateş</div>
-        <div class="element">🌪️ Hava</div>
-        <div class="element">🌱 Toprak</div>
-    </section>
-
-    <section class="message">
-        <p>
-            Azra,<br><br>
-            Avatar evreninde denge ne kadar önemliyse,  
-            benim hayatımda da sen o kadar değerlisin.  
-            Gülüşün su gibi sakin,  
-            kalbin ateş gibi güçlü,  
-            ruhun hava gibi özgür,  
-            duruşun toprak gibi sağlam 💙<br><br>
-            İyi ki varsın, iyi ki doğdun.  
-            Seni Çok Seviyorum.
-        </p>
-    </section>
-
-    <footer>
-         Avatarın Yunus ✨
-    </footer>
-
-    <!-- FOTO PANELLER -->
-    <div class="photoPanel" id="photoWater">
-        <span class="closePhoto">&times;</span>
-        <img src="images/azra_ben.png" alt="Biz">
+<header>
+    <h1>İyi Ki Doğdun Azra 🌊🔥🌪️🌱</h1>
+    <h2>Dört element, tek denge… ve bugün senin günün</h2>
+    <div class="appa-container">
+        <img src="images/pngegg.png" alt="Appa" class="appa">
     </div>
+</header>
 
-    <div class="photoPanel" id="photoFire">
-        <span class="closePhoto">&times;</span>
-        <img src="images/ates_foto.png" alt="Ateş Foto">
-    </div>
+<section class="elements">
+    <div class="element" id="water">🌊 Su</div>
+    <div class="element" id="fire">🔥 Ateş</div>
+    <div class="element" id="air">🌪️ Hava</div>
+    <div class="element" id="earth">🌱 Toprak</div>
+</section>
 
-    <script>
-        // Su paneli
-        const water = document.getElementById('water');
-        const photoWater = document.getElementById('photoWater');
+<section class="message">
+    <p>
+        Azra,<br><br>
+        Avatar evreninde denge ne kadar önemliyse,  
+        benim hayatımda da sen o kadar değerlisin.  
+        Gülüşün su gibi sakin,  
+        kalbin ateş gibi güçlü,  
+        ruhun hava gibi özgür,  
+        duruşun toprak gibi sağlam 💙<br><br>
+        İyi ki varsın, iyi ki doğdun.  
+        Seni Çok Seviyorum.
+    </p>
+</section>
 
-        // Ateş paneli
-        const fire = document.getElementById('fire');
-        const photoFire = document.getElementById('photoFire');
+<footer>Avatarın Yunus ✨</footer>
 
-        // Tüm kapatma butonları
-        const closeButtons = document.querySelectorAll('.closePhoto');
+<!-- FOTO PANELLER -->
+<div class="photoPanel" id="photoWater">
+    <span class="closePhoto">&times;</span>
+    <img src="images/azra_ben.png" alt="Su Foto">
+</div>
 
-        water.onclick = () => { photoWater.style.display = 'block'; }
-        fire.onclick = () => { photoFire.style.display = 'block'; }
+<div class="photoPanel" id="photoFire">
+    <span class="closePhoto">&times;</span>
+    <img src="images/ates_foto.png" alt="Ateş Foto">
+</div>
 
-        closeButtons.forEach(btn => {
-            btn.onclick = () => {
-                btn.parentElement.style.display = 'none';
-            }
-        });
+<div class="photoPanel" id="photoAir">
+    <span class="closePhoto">&times;</span>
+    <img src="images/hava_foto.png" alt="Hava Foto">
+</div>
 
-        // Panel dışına tıklayınca kapatma
-        window.onclick = (e) => {
-            if(e.target == photoWater) { photoWater.style.display = 'none'; }
-            if(e.target == photoFire) { photoFire.style.display = 'none'; }
-        }
-    </script>
+<div class="photoPanel" id="photoEarth">
+    <span class="closePhoto">&times;</span>
+    <img src="images/toprak_foto.png" alt="Toprak Foto">
+</div>
 
+<script>
+const panels = {
+    water: document.getElementById('photoWater'),
+    fire: document.getElementById('photoFire'),
+    air: document.getElementById('photoAir'),
+    earth: document.getElementById('photoEarth')
+};
+
+// Açma fonksiyonu (fade-in)
+function openPanel(panel) {
+    panel.style.display = 'block';
+    setTimeout(() => { panel.classList.add('fade-in'); }, 10);
+}
+
+// Kapatma fonksiyonu
+function closePanel(panel) {
+    panel.classList.remove('fade-in');
+    setTimeout(() => { panel.style.display = 'none'; }, 400);
+}
+
+// Element tıklamaları
+document.getElementById('water').onclick = () => openPanel(panels.water);
+document.getElementById('fire').onclick = () => openPanel(panels.fire);
+document.getElementById('air').onclick = () => openPanel(panels.air);
+document.getElementById('earth').onclick = () => openPanel(panels.earth);
+
+// Kapatma butonları
+document.querySelectorAll('.closePhoto').forEach(btn => {
+    btn.onclick = () => closePanel(btn.parentElement);
+});
+
+// Panel dışına tıklayınca kapatma
+window.onclick = (e) => {
+    for (let key in panels) {
+        if(e.target == panels[key]) closePanel(panels[key]);
+    }
+}
+</script>
 </body>
 </html>
