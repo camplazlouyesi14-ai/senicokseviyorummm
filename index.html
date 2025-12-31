@@ -116,19 +116,65 @@
             .message { padding: 12px; font-size: 0.95rem; }
             footer { font-size: 0.8rem; }
         }
+
+        /* KENAR BUTONU VE PANEL */
+        #sideButton {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ff6f61;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px 0 0 8px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        #sideButton:hover {
+            background: #ff3b2f;
+        }
+
+        #sidePanel {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background: rgba(20,20,20,0.95);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+            padding: 20px;
+            transition: right 0.3s;
+            z-index: 999;
+        }
+
+        #sidePanel img {
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- ARKA PLAN EFECTİ -->
     <div class="background"></div>
 
     <header>
         <h1>İyi Ki Doğdun Azra 🌊🔥🌪️🌱</h1>
         <h2>Dört element, tek denge… ve bugün senin günün</h2>
 
-        <!-- APPA FOTOĞRAFI ORTADA YÜZEN -->
         <div class="appa-container">
             <img src="images/pngegg.png" alt="Appa" class="appa">
         </div>
@@ -158,6 +204,29 @@
     <footer>
          Avatarın Yunus ✨
     </footer>
+
+    <!-- KENAR BUTONU VE PANEL -->
+    <div id="sideButton">📸</div>
+
+    <div id="sidePanel">
+        <span id="closeBtn">&times;</span>
+        <h3>Bizim Fotoğraf</h3>
+        <img src="images/azra_ben.png" alt="Biz">
+    </div>
+
+    <script>
+        const sideButton = document.getElementById('sideButton');
+        const sidePanel = document.getElementById('sidePanel');
+        const closeBtn = document.getElementById('closeBtn');
+
+        sideButton.onclick = () => {
+            sidePanel.style.right = '0';
+        }
+
+        closeBtn.onclick = () => {
+            sidePanel.style.right = '-300px';
+        }
+    </script>
 
 </body>
 </html>
