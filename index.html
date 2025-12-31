@@ -15,6 +15,7 @@
             overflow-x: hidden;
         }
 
+        /* ARKA PLAN KAYAN BULUT/DAĞ EFECTİ */
         .background {
             position: fixed;
             top: 0;
@@ -47,6 +48,7 @@
             margin-bottom: 20px;
         }
 
+        /* APPA FOTOĞRAFI - ORTADA YÜZEN */
         .appa-container {
             position: relative;
             height: 250px;
@@ -104,6 +106,7 @@
             opacity: 0.7;
         }
 
+        /* MOBİL ÖZEL */
         @media (max-width: 600px) {
             h1 { font-size: 1.6rem; }
             h2 { font-size: 1rem; }
@@ -122,14 +125,12 @@
             transform: translateY(-50%);
             background: #ff6f61;
             color: white;
-            padding: 12px 16px;
+            padding: 10px 15px;
             border-radius: 8px 0 0 8px;
             cursor: pointer;
-            z-index: 10000; /* Yüksek z-index */
-            font-size: 22px;
-            font-weight: bold;
-            box-shadow: 0 0 8px rgba(0,0,0,0.4);
-            text-align: center;
+            z-index: 1000;
+            font-size: 20px;
+            transition: background 0.3s;
         }
 
         #sideButton:hover {
@@ -138,15 +139,15 @@
 
         #sidePanel {
             position: fixed;
-            right: -320px; /* panel başlangıçta görünmez */
+            right: -300px;
             top: 0;
             width: 300px;
             height: 100%;
             background: rgba(20,20,20,0.95);
             box-shadow: -2px 0 10px rgba(0,0,0,0.5);
             padding: 20px;
-            transition: right 0.3s ease;
-            z-index: 9999;
+            transition: right 0.3s;
+            z-index: 999;
         }
 
         #sidePanel img {
@@ -223,7 +224,7 @@
         }
 
         closeBtn.onclick = () => {
-            sidePanel.style.right = '-320px';
+            sidePanel.style.right = '-300px';
         }
     </script>
 
