@@ -37,18 +37,28 @@ header {
     padding: 30px 15px;
 }
 
-h1 { font-size: 2.2rem; margin-bottom: 10px; }
-h2 { font-weight: 300; opacity: 0.9; margin-bottom: 20px; }
+/* BAŞLIK VE ALT BAŞLIĞI AŞAĞI KAYDIRMA */
+h1 {
+    font-size: 2.2rem; 
+    margin-top: 40px; /* yukarıdan biraz boşluk */
+    margin-bottom: 15px;
+}
+
+h2 { 
+    font-weight: 300; 
+    opacity: 0.9; 
+    margin-bottom: 30px; /* başlık ve elementler arası boşluk */
+}
 
 /* APPA FOTOĞRAFI */
 .appa-container { 
     position: relative; 
-    height: 300px; /* biraz aşağı çekmek için yüksekliği artırdım */
+    height: 320px; /* Appayı biraz aşağıya aldık */
     margin: 20px 0; 
 }
 .appa {
     position: absolute;
-    top: 60%; /* Appayı biraz aşağıya aldık */
+    top: 65%; /* Appa biraz daha aşağıda */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 250px;
@@ -62,25 +72,33 @@ h2 { font-weight: 300; opacity: 0.9; margin-bottom: 20px; }
     100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-.elements { display: flex; justify-content: center; gap: 15px; margin: 25px 0; flex-wrap: wrap; }
-
 /* ELEMENTLER */
+.elements { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin: 35px 0; /* elementleri biraz daha aşağı kaydırdık */
+    flex-wrap: wrap; 
+}
+
 .element {
-    background: rgba(255,255,255,0.25); /* daha belirgin, yarı şeffaf */
-    padding: 12px 18px;
+    background: rgba(255,255,255,0.4); /* daha opak ve belirgin */
+    padding: 14px 20px;
     border-radius: 12px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s;
+    transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s;
     position: relative;
     z-index: 10;
 }
 
 .element:hover {
     transform: scale(1.1);
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 0 15px rgba(255,255,255,0.5); /* hafif glow efekti */
 }
 
+/* MESAJ */
 .message {
     max-width: 90%;
     margin: 0 auto;
@@ -106,7 +124,7 @@ footer {
     h2 { font-size: 1rem; }
     .appa { width: 180px; }
     .elements { gap: 10px; }
-    .element { padding: 10px 15px; font-size: 0.95rem; }
+    .element { padding: 12px 15px; font-size: 1rem; }
     .message { padding: 12px; font-size: 0.95rem; }
     footer { font-size: 0.8rem; }
 }
