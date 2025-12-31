@@ -123,8 +123,8 @@
             footer { font-size: 0.8rem; }
         }
 
-        /* FOTO PANEL (Su elementine tıklandığında) */
-        #photoPanel {
+        /* FOTO PANEL (Su ve Ateş için) */
+        .photoPanel {
             position: fixed;
             top: 50%;
             left: 50%;
@@ -140,12 +140,12 @@
             text-align: center;
         }
 
-        #photoPanel img {
+        .photoPanel img {
             width: 100%;
             border-radius: 15px;
         }
 
-        #closePhoto {
+        .closePhoto {
             position: absolute;
             top: 10px;
             right: 15px;
@@ -171,7 +171,7 @@
 
     <section class="elements">
         <div class="element" id="water">🌊 Su</div>
-        <div class="element">🔥 Ateş</div>
+        <div class="element" id="fire">🔥 Ateş</div>
         <div class="element">🌪️ Hava</div>
         <div class="element">🌱 Toprak</div>
     </section>
@@ -194,32 +194,42 @@
          Avatarın Yunus ✨
     </footer>
 
-    <!-- FOTO PANEL -->
-    <div id="photoPanel">
-        <span id="closePhoto">&times;</span>
+    <!-- FOTO PANELLER -->
+    <div class="photoPanel" id="photoWater">
+        <span class="closePhoto">&times;</span>
         <img src="images/azra_ben.png" alt="Biz">
     </div>
 
+    <div class="photoPanel" id="photoFire">
+        <span class="closePhoto">&times;</span>
+        <img src="images/ates_foto.png" alt="Ateş Foto">
+    </div>
+
     <script>
+        // Su paneli
         const water = document.getElementById('water');
-        const photoPanel = document.getElementById('photoPanel');
-        const closePhoto = document.getElementById('closePhoto');
+        const photoWater = document.getElementById('photoWater');
 
-        // Su elementine tıklayınca fotoğraf aç
-        water.onclick = () => {
-            photoPanel.style.display = 'block';
-        }
+        // Ateş paneli
+        const fire = document.getElementById('fire');
+        const photoFire = document.getElementById('photoFire');
 
-        // Çarpıya basınca paneli kapat
-        closePhoto.onclick = () => {
-            photoPanel.style.display = 'none';
-        }
+        // Tüm kapatma butonları
+        const closeButtons = document.querySelectorAll('.closePhoto');
 
-        // Panel dışına tıklayınca paneli kapat
-        window.onclick = (e) => {
-            if(e.target == photoPanel){
-                photoPanel.style.display = 'none';
+        water.onclick = () => { photoWater.style.display = 'block'; }
+        fire.onclick = () => { photoFire.style.display = 'block'; }
+
+        closeButtons.forEach(btn => {
+            btn.onclick = () => {
+                btn.parentElement.style.display = 'none';
             }
+        });
+
+        // Panel dışına tıklayınca kapatma
+        window.onclick = (e) => {
+            if(e.target == photoWater) { photoWater.style.display = 'none'; }
+            if(e.target == photoFire) { photoFire.style.display = 'none'; }
         }
     </script>
 
