@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ARKA PLAN KAYAN BULUT/DAĞ EFECTİ */
+/* ARKA PLAN KAYAN BULUT */
 .background {
     position: fixed;
     top: 0;
@@ -33,32 +33,19 @@ body {
     to { transform: translateX(-50%); }
 }
 
+/* HEADER VE APPPA */
 header {
-    padding: 30px 15px;
+    padding: 40px 15px;
 }
 
-/* BAŞLIK VE ALT BAŞLIĞI AŞAĞI KAYDIRMA */
-h1 {
-    font-size: 2.2rem; 
-    margin-top: 40px; /* yukarıdan biraz boşluk */
-    margin-bottom: 15px;
-}
-
-h2 { 
-    font-weight: 300; 
-    opacity: 0.9; 
-    margin-bottom: 30px; /* başlık ve elementler arası boşluk */
-}
-
-/* APPA FOTOĞRAFI */
 .appa-container { 
     position: relative; 
-    height: 320px; /* Appayı biraz aşağıya aldık */
+    height: 320px; 
     margin: 20px 0; 
 }
 .appa {
     position: absolute;
-    top: 65%; /* Appa biraz daha aşağıda */
+    top: 65%; 
     left: 50%;
     transform: translate(-50%, -50%);
     width: 250px;
@@ -72,17 +59,32 @@ h2 {
     100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* BAŞLIK VE ALT YAZI KONTEYNERI */
+.title-container {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.4); /* yarı saydam arka plan */
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.title-container h1, .title-container h2 {
+    color: white;
+    text-shadow: 2px 2px 0 black; /* siyah etraf kalınlığı */
+    margin: 5px 0;
+}
+
 /* ELEMENTLER */
 .elements { 
     display: flex; 
     justify-content: center; 
     gap: 15px; 
-    margin: 35px 0; /* elementleri biraz daha aşağı kaydırdık */
+    margin: 30px 0; 
     flex-wrap: wrap; 
 }
 
 .element {
-    background: rgba(255,255,255,0.4); /* daha opak ve belirgin */
+    background: rgba(0,0,0,0.35); /* foto buton ve yazılar arka planı */
     padding: 14px 20px;
     border-radius: 12px;
     font-size: 1.15rem;
@@ -90,12 +92,14 @@ h2 {
     transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s;
     position: relative;
     z-index: 10;
+    color: white;
+    text-shadow: 1px 1px 0 black;
 }
 
 .element:hover {
     transform: scale(1.1);
-    background: rgba(255,255,255,0.6);
-    box-shadow: 0 0 15px rgba(255,255,255,0.5); /* hafif glow efekti */
+    background: rgba(0,0,0,0.55);
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
 }
 
 /* MESAJ */
@@ -103,9 +107,11 @@ h2 {
     max-width: 90%;
     margin: 0 auto;
     padding: 15px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.35); /* yarı saydam arka plan */
     border-radius: 15px;
     font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 0 black;
 }
 
 .message p { line-height: 1.5; }
@@ -167,8 +173,10 @@ footer {
 <div class="background"></div>
 
 <header>
-    <h1>İyi Ki Doğdun Azra 🌊🔥🌪️🌱</h1>
-    <h2>Dört element, tek denge… ve bugün senin günün</h2>
+    <div class="title-container">
+        <h1>İyi Ki Doğdun Azra 🌊🔥🌪️🌱</h1>
+        <h2>Dört element, tek denge… ve bugün senin günün</h2>
+    </div>
     <div class="appa-container">
         <img src="images/pngegg.png" alt="Appa" class="appa">
     </div>
