@@ -12,10 +12,9 @@ body {
     background: linear-gradient(to bottom, #0b1d3a, #1c3b5a);
     color: white;
     text-align: center;
-    overflow-x: hidden;
 }
 
-/* ARKA PLAN KAYAN BULUT */
+/* BULUT ARKA PLAN */
 .background {
     position: fixed;
     top: 0;
@@ -33,235 +32,144 @@ body {
     to { transform: translateX(-50%); }
 }
 
-/* HEADER VE APPA */
-header {
-    padding: 40px 15px;
+/* BAŞLIK */
+.title-box {
+    display: inline-block;
+    background: rgba(0,0,0,0.45);
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-top: 40px;
 }
 
-.appa-container { 
-    position: relative; 
-    height: 350px; 
-    margin: 20px 0; 
+.title-box h1,
+.title-box h2 {
+    margin: 5px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
+
+/* APPA */
 .appa {
-    position: absolute;
-    top: 65%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px; 
-    border-radius: 15px;
-    animation: float 3s ease-in-out infinite alternate;
+    width: 320px;
+    margin: 40px auto 10px;
+    animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -55%) scale(1.05); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-/* BAŞLIK VE ALT YAZI KONTEYNERI */
-.title-container {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    background: rgba(0,0,0,0.4);
-    border-radius: 10px;
-}
-
-.title-container h1, .title-container h2 {
-    color: white;
-    margin: 5px 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
 }
 
 /* ELEMENTLER */
-.elements { 
-    display: flex; 
-    justify-content: center; 
-    gap: 15px; 
-    margin: 30px 0; 
-    flex-wrap: wrap; 
+.elements {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .element {
-    background: rgba(0,0,0,0.2); /* yarı saydam arka plan */
+    background: rgba(0,0,0,0.25);
     padding: 14px 20px;
     border-radius: 12px;
-    font-size: 1.15rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s;
-    position: relative;
-    z-index: 10;
-    color: white;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-.element:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    cursor: pointer;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 /* MESAJ */
 .message {
     max-width: 90%;
-    margin: 0 auto;
-    padding: 15px;
-    background: rgba(0,0,0,0.3);
+    margin: 20px auto;
+    background: rgba(0,0,0,0.35);
+    padding: 18px;
     border-radius: 12px;
-    font-size: 1rem;
     font-weight: 600;
-    color: white;
-    line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-.message p { 
-    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 /* FOOTER */
-footer { 
-    margin-top: 30px; 
-    padding: 15px; 
-    font-size: 1.3rem; 
-    font-weight: bold; 
-    color: white; 
+footer {
+    margin: 30px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 1rem; }
-    .appa { width: 220px; }
-    .elements { gap: 10px; }
-    .element { padding: 12px 15px; font-size: 1rem; }
-    .message { padding: 12px; font-size: 0.95rem; }
-    footer { font-size: 1.1rem; }
-}
-
-/* FOTO PANELLER */
-.photoPanel {
+/* MÜZİK BUTONU */
+.music-btn {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.9);
-    padding: 20px;
-    border-radius: 15px;
-    display: none;
-    z-index: 1000;
-    max-width: 90%;
-    max-height: 80%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7);
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 999;
 }
 
-.photoPanel.fade-in { opacity: 1; }
+.music-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
 
-.photoPanel img { width: 100%; border-radius: 15px; }
-
-.closePhoto {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
+/* GİZLİ YOUTUBE */
+.yt-player {
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 </style>
 </head>
 
 <body>
+
 <div class="background"></div>
 
-<header>
-    <div class="title-container">
-        <h1>İyi Ki Doğdun Gülüm</h1>
-        <h2>Dört element, tek denge… ve bugün senin günün</h2>
-    </div>
-    <div class="appa-container">
-        <img src="images/pngegg.png" alt="Appa" class="appa">
-    </div>
-</header>
+<div class="title-box">
+    <h1>İyi Ki Doğdun Gülüm</h1>
+    <h2>Dört element, tek denge… ve bugün senin günün</h2>
+</div>
 
-<section class="elements">
-    <div class="element" id="water">🌊 Su</div>
-    <div class="element" id="earth">🌱 Toprak</div>
-    <div class="element" id="fire">🔥 Ateş</div>
-    <div class="element" id="air">🌪️ Hava</div>
-</section>
+<img src="images/pngegg.png" alt="Appa" class="appa">
 
-<section class="message">
-    <p>
-        Gülüm,<br><br>
-        Avatar evreninde denge ne kadar önemliyse,  
-        benim hayatımda da sen o kadar değerlisin.  
-        Gülüşün su gibi sakin,  
-        kalbin ateş gibi güçlü,  
-        ruhun hava gibi özgür,  
-        duruşun toprak gibi sağlam 💙<br><br>
-        İyi ki varsın, iyi ki doğdun.  
-        Seni Çok Seviyorum.
-    </p>
-</section>
+<div class="elements">
+    <div class="element">🌊 Su</div>
+    <div class="element">🌱 Toprak</div>
+    <div class="element">🔥 Ateş</div>
+    <div class="element">🌪️ Hava</div>
+</div>
+
+<div class="message">
+    Gülüm,<br><br>
+    Avatar evreninde denge ne kadar önemliyse,  
+    benim hayatımda da sen o kadar değerlisin.  
+    İyi ki varsın, iyi ki doğdun.  
+    Seni çok seviyorum 💙
+</div>
 
 <footer>Avatarın Yunus ✨</footer>
 
-<!-- FOTO PANELLER -->
-<div class="photoPanel" id="photoWater">
-    <span class="closePhoto">&times;</span>
-    <img src="images/azra_ben.png" alt="Su Foto">
-</div>
+<!-- MÜZİK BUTONU -->
+<button class="music-btn" onclick="startMusic()">🎵 Müziği Başlat</button>
 
-<div class="photoPanel" id="photoFire">
-    <span class="closePhoto">&times;</span>
-    <img src="images/ates_foto.png" alt="Ateş Foto">
-</div>
-
-<div class="photoPanel" id="photoAir">
-    <span class="closePhoto">&times;</span>
-    <img src="images/hava_foto.png" alt="Hava Foto">
-</div>
-
-<div class="photoPanel" id="photoEarth">
-    <span class="closePhoto">&times;</span>
-    <img src="images/toprak_foto.png" alt="Toprak Foto">
+<!-- GİZLİ YOUTUBE PLAYER -->
+<div class="yt-player" id="music">
+    <iframe id="yt"
+        src=""
+        allow="autoplay">
+    </iframe>
 </div>
 
 <script>
-const panels = {
-    water: document.getElementById('photoWater'),
-    fire: document.getElementById('photoFire'),
-    air: document.getElementById('photoAir'),
-    earth: document.getElementById('photoEarth')
-};
-
-function openPanel(panel) {
-    panel.style.display = 'block';
-    setTimeout(() => { panel.classList.add('fade-in'); }, 10);
-}
-
-function closePanel(panel) {
-    panel.classList.remove('fade-in');
-    setTimeout(() => { panel.style.display = 'none'; }, 400);
-}
-
-document.getElementById('water').onclick = () => openPanel(panels.water);
-document.getElementById('fire').onclick = () => openPanel(panels.fire);
-document.getElementById('air').onclick = () => openPanel(panels.air);
-document.getElementById('earth').onclick = () => openPanel(panels.earth);
-
-document.querySelectorAll('.closePhoto').forEach(btn => {
-    btn.onclick = () => closePanel(btn.parentElement);
-});
-
-window.onclick = (e) => {
-    for (let key in panels) {
-        if(e.target == panels[key]) closePanel(panels[key]);
-    }
+function startMusic() {
+    document.getElementById("yt").src =
+        "https://www.youtube.com/embed/jRcJp1i4Emo?autoplay=1&loop=1&playlist=jRcJp1i4Emo";
+    document.querySelector(".music-btn").style.display = "none";
 }
 </script>
+
 </body>
 </html>
